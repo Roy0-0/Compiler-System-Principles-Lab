@@ -1,0 +1,1 @@
+$ /home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-opt-14 /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/scalar_64/baseline/02_scf.mlir --convert-scf-to-std --verify-each -o /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/scalar_64/baseline/03_cfg.mlir

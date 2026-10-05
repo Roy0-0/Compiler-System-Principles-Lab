@@ -1,0 +1,61 @@
+// Extended SysY example for every optional language feature in the assignment.
+// The tensor syntax is defined in TENSOR_EXTENSION.md because the supplied
+// course material names the feature but does not define its concrete grammar.
+
+const float SCALE = 1.5;
+
+float samples[4] = {1.25, -2.0, 3.5, 4.0};
+tensor<float, 2, 3> tensor_a = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+tensor<float, 2, 3> tensor_b = {{0.5, -1.0, 2.0}, {1.5, 0.25, -0.5}};
+
+float abs_float(float value) {
+    if (value < 0.0) {
+        return -value;
+    }
+    return value;
+}
+
+float scaled_array_sum(float data[], int len, float initial) {
+    int i = 0;
+    float total = initial;
+
+    while (i < len) {
+        total = total + data[i] * SCALE;
+        i = i + 1;
+    }
+    return total;
+}
+
+float tensor_dot(tensor<float, 2, 3> left,
+                 tensor<float, 2, 3> right) {
+    int row = 0;
+    float total = 0.0;
+
+    while (row < 2) {
+        int col = 0;
+        while (col < 3) {
+            total = total + left[row][col] * right[row][col];
+            col = col + 1;
+        }
+        row = row + 1;
+    }
+    return total;
+}
+
+int main() {
+    float input = getfloat();
+    float magnitude = abs_float(input);
+    float array_result = scaled_array_sum(samples, 4, input);
+    float dot_result = tensor_dot(tensor_a, tensor_b);
+    float combined = magnitude + array_result + dot_result;
+
+    putfloat(magnitude);
+    putch(32);
+    putfloat(array_result);
+    putch(32);
+    putfloat(dot_result);
+    putch(32);
+    putfloat(combined);
+    putch(10);
+    return 0;
+}

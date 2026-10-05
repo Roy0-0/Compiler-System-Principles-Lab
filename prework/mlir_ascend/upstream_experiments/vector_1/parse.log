@@ -1,0 +1,1 @@
+$ /home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-opt-14 /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/vector_1/input.mlir --verify-each -o /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/vector_1/parsed.mlir

@@ -1,0 +1,27 @@
+// Parser/semantic test cases from the course's SysY grammar supplement.
+// This file is intentionally not compiled as C: C gives ++a increment
+// semantics, while SysY parses it as +(+(a)).
+
+const int ROWS = 2;
+const int COLS = 3;
+float values[ROWS][COLS];
+
+int double_unary_plus(int a) {
+    // In this course's SysY, ++a leaves a unchanged.
+    return ++a;
+}
+
+int boolean_expression_anywhere(float value) {
+    int truth = value && !0;
+    int inverted = !value;
+    return truth + inverted;
+}
+
+int minimum_signed_int() {
+    // The frontend must accept this as the minimum signed 32-bit integer.
+    return -2147483648;
+}
+
+float hexadecimal_float() {
+    return 0x1.8p+1;
+}

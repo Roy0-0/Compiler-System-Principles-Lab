@@ -1,0 +1,219 @@
+$ /home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-opt-14 /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/scalar_16/input.mlir --affine-loop-unroll=unroll-factor=4 --canonicalize --cse --verify-each --print-ir-after-all -o /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/scalar_16/unroll4/01_optimized.mlir
+// -----// IR Dump After AffineLoopUnroll //----- //
+func @main() -> i32 {
+  %0 = memref.alloc() : memref<16xi32>
+  %1 = memref.alloc() : memref<16xi32>
+  %2 = memref.alloc() : memref<16xi32>
+  %c0_i32 = arith.constant 0 : i32
+  %c2_i32 = arith.constant 2 : i32
+  %c360_i32 = arith.constant 360 : i32
+  %c0_i32_0 = arith.constant 0 : i32
+  %c1_i32 = arith.constant 1 : i32
+  affine.for %arg0 = 0 to 16 step 4 {
+    %6 = arith.index_cast %arg0 : index to i32
+    %7 = arith.muli %6, %c2_i32 : i32
+    affine.store %6, %0[%arg0] : memref<16xi32>
+    affine.store %7, %1[%arg0] : memref<16xi32>
+    %8 = affine.apply affine_map<(d0) -> (d0 + 1)>(%arg0)
+    %9 = arith.index_cast %8 : index to i32
+    %10 = arith.muli %9, %c2_i32 : i32
+    affine.store %9, %0[%8] : memref<16xi32>
+    affine.store %10, %1[%8] : memref<16xi32>
+    %11 = affine.apply affine_map<(d0) -> (d0 + 2)>(%arg0)
+    %12 = arith.index_cast %11 : index to i32
+    %13 = arith.muli %12, %c2_i32 : i32
+    affine.store %12, %0[%11] : memref<16xi32>
+    affine.store %13, %1[%11] : memref<16xi32>
+    %14 = affine.apply affine_map<(d0) -> (d0 + 3)>(%arg0)
+    %15 = arith.index_cast %14 : index to i32
+    %16 = arith.muli %15, %c2_i32 : i32
+    affine.store %15, %0[%14] : memref<16xi32>
+    affine.store %16, %1[%14] : memref<16xi32>
+  }
+  affine.for %arg0 = 0 to 16 step 4 {
+    %6 = affine.load %0[%arg0] : memref<16xi32>
+    %7 = affine.load %1[%arg0] : memref<16xi32>
+    %8 = arith.addi %6, %7 : i32
+    affine.store %8, %2[%arg0] : memref<16xi32>
+    %9 = affine.apply affine_map<(d0) -> (d0 + 1)>(%arg0)
+    %10 = affine.load %0[%9] : memref<16xi32>
+    %11 = affine.load %1[%9] : memref<16xi32>
+    %12 = arith.addi %10, %11 : i32
+    affine.store %12, %2[%9] : memref<16xi32>
+    %13 = affine.apply affine_map<(d0) -> (d0 + 2)>(%arg0)
+    %14 = affine.load %0[%13] : memref<16xi32>
+    %15 = affine.load %1[%13] : memref<16xi32>
+    %16 = arith.addi %14, %15 : i32
+    affine.store %16, %2[%13] : memref<16xi32>
+    %17 = affine.apply affine_map<(d0) -> (d0 + 3)>(%arg0)
+    %18 = affine.load %0[%17] : memref<16xi32>
+    %19 = affine.load %1[%17] : memref<16xi32>
+    %20 = arith.addi %18, %19 : i32
+    affine.store %20, %2[%17] : memref<16xi32>
+  }
+  %3 = affine.for %arg0 = 0 to 16 step 4 iter_args(%arg1 = %c0_i32) -> (i32) {
+    %6 = affine.load %2[%arg0] : memref<16xi32>
+    %7 = arith.addi %arg1, %6 : i32
+    %8 = affine.apply affine_map<(d0) -> (d0 + 1)>(%arg0)
+    %9 = affine.load %2[%8] : memref<16xi32>
+    %10 = arith.addi %7, %9 : i32
+    %11 = affine.apply affine_map<(d0) -> (d0 + 2)>(%arg0)
+    %12 = affine.load %2[%11] : memref<16xi32>
+    %13 = arith.addi %10, %12 : i32
+    %14 = affine.apply affine_map<(d0) -> (d0 + 3)>(%arg0)
+    %15 = affine.load %2[%14] : memref<16xi32>
+    %16 = arith.addi %13, %15 : i32
+    affine.yield %16 : i32
+  }
+  %4 = arith.cmpi eq, %3, %c360_i32 : i32
+  %5 = select %4, %c0_i32_0, %c1_i32 : i32
+  memref.dealloc %0 : memref<16xi32>
+  memref.dealloc %1 : memref<16xi32>
+  memref.dealloc %2 : memref<16xi32>
+  return %5 : i32
+}
+
+// -----// IR Dump After Canonicalizer //----- //
+#map0 = affine_map<(d0) -> (d0 + 1)>
+#map1 = affine_map<(d0) -> (d0 + 2)>
+#map2 = affine_map<(d0) -> (d0 + 3)>
+module {
+  func @main() -> i32 {
+    %c0_i32 = arith.constant 0 : i32
+    %c360_i32 = arith.constant 360 : i32
+    %c2_i32 = arith.constant 2 : i32
+    %0 = memref.alloc() : memref<16xi32>
+    %1 = memref.alloc() : memref<16xi32>
+    %2 = memref.alloc() : memref<16xi32>
+    affine.for %arg0 = 0 to 16 step 4 {
+      %6 = arith.index_cast %arg0 : index to i32
+      %7 = arith.muli %6, %c2_i32 : i32
+      affine.store %6, %0[%arg0] : memref<16xi32>
+      affine.store %7, %1[%arg0] : memref<16xi32>
+      %8 = affine.apply #map0(%arg0)
+      %9 = arith.index_cast %8 : index to i32
+      %10 = arith.muli %9, %c2_i32 : i32
+      affine.store %9, %0[%arg0 + 1] : memref<16xi32>
+      affine.store %10, %1[%arg0 + 1] : memref<16xi32>
+      %11 = affine.apply #map1(%arg0)
+      %12 = arith.index_cast %11 : index to i32
+      %13 = arith.muli %12, %c2_i32 : i32
+      affine.store %12, %0[%arg0 + 2] : memref<16xi32>
+      affine.store %13, %1[%arg0 + 2] : memref<16xi32>
+      %14 = affine.apply #map2(%arg0)
+      %15 = arith.index_cast %14 : index to i32
+      %16 = arith.muli %15, %c2_i32 : i32
+      affine.store %15, %0[%arg0 + 3] : memref<16xi32>
+      affine.store %16, %1[%arg0 + 3] : memref<16xi32>
+    }
+    affine.for %arg0 = 0 to 16 step 4 {
+      %6 = affine.load %0[%arg0] : memref<16xi32>
+      %7 = affine.load %1[%arg0] : memref<16xi32>
+      %8 = arith.addi %6, %7 : i32
+      affine.store %8, %2[%arg0] : memref<16xi32>
+      %9 = affine.load %0[%arg0 + 1] : memref<16xi32>
+      %10 = affine.load %1[%arg0 + 1] : memref<16xi32>
+      %11 = arith.addi %9, %10 : i32
+      affine.store %11, %2[%arg0 + 1] : memref<16xi32>
+      %12 = affine.load %0[%arg0 + 2] : memref<16xi32>
+      %13 = affine.load %1[%arg0 + 2] : memref<16xi32>
+      %14 = arith.addi %12, %13 : i32
+      affine.store %14, %2[%arg0 + 2] : memref<16xi32>
+      %15 = affine.load %0[%arg0 + 3] : memref<16xi32>
+      %16 = affine.load %1[%arg0 + 3] : memref<16xi32>
+      %17 = arith.addi %15, %16 : i32
+      affine.store %17, %2[%arg0 + 3] : memref<16xi32>
+    }
+    %3 = affine.for %arg0 = 0 to 16 step 4 iter_args(%arg1 = %c0_i32) -> (i32) {
+      %6 = affine.load %2[%arg0] : memref<16xi32>
+      %7 = arith.addi %arg1, %6 : i32
+      %8 = affine.load %2[%arg0 + 1] : memref<16xi32>
+      %9 = arith.addi %7, %8 : i32
+      %10 = affine.load %2[%arg0 + 2] : memref<16xi32>
+      %11 = arith.addi %9, %10 : i32
+      %12 = affine.load %2[%arg0 + 3] : memref<16xi32>
+      %13 = arith.addi %11, %12 : i32
+      affine.yield %13 : i32
+    }
+    %4 = arith.cmpi ne, %3, %c360_i32 : i32
+    %5 = arith.extui %4 : i1 to i32
+    memref.dealloc %0 : memref<16xi32>
+    memref.dealloc %1 : memref<16xi32>
+    memref.dealloc %2 : memref<16xi32>
+    return %5 : i32
+  }
+}
+
+
+// -----// IR Dump After CSE //----- //
+#map0 = affine_map<(d0) -> (d0 + 1)>
+#map1 = affine_map<(d0) -> (d0 + 2)>
+#map2 = affine_map<(d0) -> (d0 + 3)>
+module {
+  func @main() -> i32 {
+    %c0_i32 = arith.constant 0 : i32
+    %c360_i32 = arith.constant 360 : i32
+    %c2_i32 = arith.constant 2 : i32
+    %0 = memref.alloc() : memref<16xi32>
+    %1 = memref.alloc() : memref<16xi32>
+    %2 = memref.alloc() : memref<16xi32>
+    affine.for %arg0 = 0 to 16 step 4 {
+      %6 = arith.index_cast %arg0 : index to i32
+      %7 = arith.muli %6, %c2_i32 : i32
+      affine.store %6, %0[%arg0] : memref<16xi32>
+      affine.store %7, %1[%arg0] : memref<16xi32>
+      %8 = affine.apply #map0(%arg0)
+      %9 = arith.index_cast %8 : index to i32
+      %10 = arith.muli %9, %c2_i32 : i32
+      affine.store %9, %0[%arg0 + 1] : memref<16xi32>
+      affine.store %10, %1[%arg0 + 1] : memref<16xi32>
+      %11 = affine.apply #map1(%arg0)
+      %12 = arith.index_cast %11 : index to i32
+      %13 = arith.muli %12, %c2_i32 : i32
+      affine.store %12, %0[%arg0 + 2] : memref<16xi32>
+      affine.store %13, %1[%arg0 + 2] : memref<16xi32>
+      %14 = affine.apply #map2(%arg0)
+      %15 = arith.index_cast %14 : index to i32
+      %16 = arith.muli %15, %c2_i32 : i32
+      affine.store %15, %0[%arg0 + 3] : memref<16xi32>
+      affine.store %16, %1[%arg0 + 3] : memref<16xi32>
+    }
+    affine.for %arg0 = 0 to 16 step 4 {
+      %6 = affine.load %0[%arg0] : memref<16xi32>
+      %7 = affine.load %1[%arg0] : memref<16xi32>
+      %8 = arith.addi %6, %7 : i32
+      affine.store %8, %2[%arg0] : memref<16xi32>
+      %9 = affine.load %0[%arg0 + 1] : memref<16xi32>
+      %10 = affine.load %1[%arg0 + 1] : memref<16xi32>
+      %11 = arith.addi %9, %10 : i32
+      affine.store %11, %2[%arg0 + 1] : memref<16xi32>
+      %12 = affine.load %0[%arg0 + 2] : memref<16xi32>
+      %13 = affine.load %1[%arg0 + 2] : memref<16xi32>
+      %14 = arith.addi %12, %13 : i32
+      affine.store %14, %2[%arg0 + 2] : memref<16xi32>
+      %15 = affine.load %0[%arg0 + 3] : memref<16xi32>
+      %16 = affine.load %1[%arg0 + 3] : memref<16xi32>
+      %17 = arith.addi %15, %16 : i32
+      affine.store %17, %2[%arg0 + 3] : memref<16xi32>
+    }
+    %3 = affine.for %arg0 = 0 to 16 step 4 iter_args(%arg1 = %c0_i32) -> (i32) {
+      %6 = affine.load %2[%arg0] : memref<16xi32>
+      %7 = arith.addi %arg1, %6 : i32
+      %8 = affine.load %2[%arg0 + 1] : memref<16xi32>
+      %9 = arith.addi %7, %8 : i32
+      %10 = affine.load %2[%arg0 + 2] : memref<16xi32>
+      %11 = arith.addi %9, %10 : i32
+      %12 = affine.load %2[%arg0 + 3] : memref<16xi32>
+      %13 = arith.addi %11, %12 : i32
+      affine.yield %13 : i32
+    }
+    %4 = arith.cmpi ne, %3, %c360_i32 : i32
+    %5 = arith.extui %4 : i1 to i32
+    memref.dealloc %0 : memref<16xi32>
+    memref.dealloc %1 : memref<16xi32>
+    memref.dealloc %2 : memref<16xi32>
+    return %5 : i32
+  }
+}
+
+

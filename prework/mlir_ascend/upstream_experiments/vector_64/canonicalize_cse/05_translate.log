@@ -1,0 +1,1 @@
+$ /home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-translate-14 /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/vector_64/canonicalize_cse/04_llvm.mlir --mlir-to-llvmir -o /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/vector_64/canonicalize_cse/05_program.ll

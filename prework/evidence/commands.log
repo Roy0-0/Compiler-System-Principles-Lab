@@ -1,0 +1,22 @@
+# 2026-10-03 独立执行链
+bash scripts/install_mlir_f.sh
+python3 scripts/run_mlir_exploration.py
+bash scripts/run_mlir_pass_probe.sh
+python3 scripts/verify_mlir_negative_controls.py
+python3 scripts/summarize_mlir.py
+bash scripts/collect_environment.sh
+bash scripts/build_program_a.sh
+bash scripts/verify_program_a.sh
+bash scripts/run_program_b_experiments.sh
+bash program_c_kernel_probe/tests/test_kernel_probe.sh
+bash program_c_kernel_probe/tests/test_experiments.sh
+
+# 核心成功标志
+MLIR_EXPLORATION_PASS executions=150 failures=0
+MLIR_NEGATIVE_CONTROLS_PASS detected=2 total=2
+PROGRAM_A_BUILD_PASS stages=16
+PROGRAM_A_VERIFY_PASS cases=8 implementations=3 riscv=EXECUTED_PASS
+PROGRAM_B_EXPERIMENTS_PASS variants=14 sizes=4 baseline=1092486 dependent=5451273629
+PROGRAM_C_UNIT_PASS checksum=1092486 invalid_args=2
+PROGRAM_C_EXPERIMENTS_PASS variants=9 n=5000000 repeats=20 runs=7 perf=UNAVAILABLE
+PROGRAM_C_EXPERIMENT_TEST_PASS variants=9

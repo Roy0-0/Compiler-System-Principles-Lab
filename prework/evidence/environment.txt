@@ -1,0 +1,27 @@
+captured_at_utc=2026-10-04T14:52:06Z
+
+[uname]
+Linux RoyWangSir 6.18.40.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Fri Jul 31 22:12:15 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+[clang]
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+
+[gcc]
+gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+
+[llvm-as]
+Ubuntu LLVM version 14.0.0
+
+[opt]
+Ubuntu LLVM version 14.0.0
+
+[binutils]
+GNU ld (GNU Binutils for Ubuntu) 2.38
+GNU objdump (GNU Binutils for Ubuntu) 2.38
+
+[riscv-runtime]
+/usr/bin/riscv64-linux-gnu-gcc
+/usr/bin/qemu-riscv64

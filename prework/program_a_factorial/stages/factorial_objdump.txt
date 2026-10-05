@@ -1,0 +1,56 @@
+
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <factorial>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	89 7d f8             	mov    %edi,-0x8(%rbp)
+   7:	83 7d f8 00          	cmpl   $0x0,-0x8(%rbp)
+   b:	0f 8c 0a 00 00 00    	jl     1b <factorial+0x1b>
+  11:	83 7d f8 0c          	cmpl   $0xc,-0x8(%rbp)
+  15:	0f 8e 0c 00 00 00    	jle    27 <factorial+0x27>
+  1b:	c7 45 fc ff ff ff ff 	movl   $0xffffffff,-0x4(%rbp)
+  22:	e9 38 00 00 00       	jmp    5f <factorial+0x5f>
+  27:	c7 45 f4 02 00 00 00 	movl   $0x2,-0xc(%rbp)
+  2e:	c7 45 f0 01 00 00 00 	movl   $0x1,-0x10(%rbp)
+  35:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  38:	3b 45 f8             	cmp    -0x8(%rbp),%eax
+  3b:	0f 8f 18 00 00 00    	jg     59 <factorial+0x59>
+  41:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  44:	0f af 45 f4          	imul   -0xc(%rbp),%eax
+  48:	89 45 f0             	mov    %eax,-0x10(%rbp)
+  4b:	8b 45 f4             	mov    -0xc(%rbp),%eax
+  4e:	83 c0 01             	add    $0x1,%eax
+  51:	89 45 f4             	mov    %eax,-0xc(%rbp)
+  54:	e9 dc ff ff ff       	jmp    35 <factorial+0x35>
+  59:	8b 45 f0             	mov    -0x10(%rbp),%eax
+  5c:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  5f:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  62:	5d                   	pop    %rbp
+  63:	c3                   	ret    
+  64:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  6b:	00 00 00 
+  6e:	66 90                	xchg   %ax,%ax
+
+0000000000000070 <main>:
+  70:	55                   	push   %rbp
+  71:	48 89 e5             	mov    %rsp,%rbp
+  74:	48 83 ec 10          	sub    $0x10,%rsp
+  78:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  7f:	e8 00 00 00 00       	call   84 <main+0x14>
+			80: R_X86_64_PLT32	getint-0x4
+  84:	89 45 f8             	mov    %eax,-0x8(%rbp)
+  87:	8b 7d f8             	mov    -0x8(%rbp),%edi
+  8a:	e8 00 00 00 00       	call   8f <main+0x1f>
+			8b: R_X86_64_PLT32	factorial-0x4
+  8f:	89 45 f4             	mov    %eax,-0xc(%rbp)
+  92:	8b 7d f4             	mov    -0xc(%rbp),%edi
+  95:	e8 00 00 00 00       	call   9a <main+0x2a>
+			96: R_X86_64_PLT32	putint-0x4
+  9a:	31 c0                	xor    %eax,%eax
+  9c:	48 83 c4 10          	add    $0x10,%rsp
+  a0:	5d                   	pop    %rbp
+  a1:	c3                   	ret    

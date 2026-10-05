@@ -1,0 +1,7 @@
+/home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-opt-14 /home/roy/compiler-lab/prework/mlir_ascend/negative_controls/wrong_expected_checksum/mutated.mlir --lower-affine --convert-scf-to-std --convert-vector-to-llvm --convert-memref-to-llvm --convert-arith-to-llvm --convert-std-to-llvm --reconcile-unrealized-casts -o /home/roy/compiler-lab/prework/mlir_ascend/negative_controls/wrong_expected_checksum/lowered.mlir
+
+/home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-translate-14 /home/roy/compiler-lab/prework/mlir_ascend/negative_controls/wrong_expected_checksum/lowered.mlir --mlir-to-llvmir -o /home/roy/compiler-lab/prework/mlir_ascend/negative_controls/wrong_expected_checksum/program.ll
+
+clang -O2 /home/roy/compiler-lab/prework/mlir_ascend/negative_controls/wrong_expected_checksum/program.ll -o /home/roy/compiler-lab/prework/mlir_ascend/negative_controls/wrong_expected_checksum/program
+warning: overriding the module target triple with x86_64-pc-linux-gnu [-Woverride-module]
+1 warning generated.

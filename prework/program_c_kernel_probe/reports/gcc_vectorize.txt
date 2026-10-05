@@ -1,0 +1,129 @@
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:63:26: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:63:26: optimized:  loop versioned for vectorization because of possible aliasing
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:56:22: note: vectorized 1 loops in function.
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:66:1: note: ***** Analysis failed with vector mode V4SI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:66:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:37:14: missed: statement clobbers memory: parsed_15 = strtoull (text_13(D), &end, 10);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:32:12: note: ***** Analysis failed with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:32:12: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:78:26: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:132:36: missed: couldn't vectorize loop
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:132:36: missed: not vectorized: number of iterations cannot be computed.
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:70:26: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:46:26: missed: couldn't vectorize loop
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:94:5: missed: not vectorized: relevant phi not supported: i_127 = PHI <0(10), i_94(34)>
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: vectorized 2 loops in function.
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:110:14: missed: statement clobbers memory: a_114 = malloc (4000000);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:111:14: missed: statement clobbers memory: b_135 = malloc (4000000);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:112:14: missed: statement clobbers memory: c_120 = malloc (4000000);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:100:22: missed: statement clobbers memory: _2 = parse_positive (_1, 20000000, &n);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:103:22: missed: statement clobbers memory: _5 = parse_positive (_4, 10000, &repeats);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:110:14: missed: statement clobbers memory: a_39 = malloc (_7);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:111:14: missed: statement clobbers memory: b_41 = malloc (_7);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:112:14: missed: statement clobbers memory: c_43 = malloc (_7);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:123:5: missed: statement clobbers memory: transform (a_156, b_159, c_163, n.0_153);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:126:9: missed: statement clobbers memory: _15 = clock_gettime (1, &start);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:133:9: missed: statement clobbers memory: transform (a_156, b_159, c_163, n.6_16);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:134:9: missed: statement clobbers memory: __asm__ __volatile__("" :  :  : "memory");
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:136:9: missed: statement clobbers memory: _18 = clock_gettime (1, &end);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "mode=independent n=%zu repeats=%zu checksum=%ld reference=%ld verified=%d elapsed_ns=%lu ns_per_element=%.6f\n", n.8_19, repeats.7_134, sum_125, sum_130, verified_51, _104, ns_per_element_52);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:153:5: missed: statement clobbers memory: free (a_156);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:154:5: missed: statement clobbers memory: free (b_159);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:155:5: missed: statement clobbers memory: free (c_163);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:137:9: missed: statement clobbers memory: free (a_156);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:138:9: missed: statement clobbers memory: free (b_159);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:139:9: missed: statement clobbers memory: free (c_163);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:127:9: missed: statement clobbers memory: free (a_156);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:128:9: missed: statement clobbers memory: free (b_159);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:129:9: missed: statement clobbers memory: free (c_163);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:114:9: missed: statement clobbers memory: free (a_154);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:115:9: missed: statement clobbers memory: free (b_157);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:116:9: missed: statement clobbers memory: free (c_161);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: ***** Analysis failed with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:63:26: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:63:26: optimized:  loop versioned for vectorization because of possible aliasing
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:56:22: note: vectorized 1 loops in function.
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:66:1: note: ***** Analysis failed with vector mode V4SI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:66:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:37:14: missed: statement clobbers memory: parsed_15 = strtoull (text_13(D), &end, 10);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:32:12: note: ***** Analysis failed with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:32:12: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:78:26: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:132:36: missed: couldn't vectorize loop
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:132:36: missed: not vectorized: number of iterations cannot be computed.
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:70:26: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:46:26: missed: couldn't vectorize loop
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:94:5: missed: not vectorized: relevant phi not supported: i_127 = PHI <0(10), i_94(34)>
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: vectorized 2 loops in function.
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:110:14: missed: statement clobbers memory: a_114 = malloc (4000000);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:111:14: missed: statement clobbers memory: b_135 = malloc (4000000);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:112:14: missed: statement clobbers memory: c_120 = malloc (4000000);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:100:22: missed: statement clobbers memory: _2 = parse_positive (_1, 20000000, &n);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:103:22: missed: statement clobbers memory: _5 = parse_positive (_4, 10000, &repeats);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:110:14: missed: statement clobbers memory: a_39 = malloc (_7);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:111:14: missed: statement clobbers memory: b_41 = malloc (_7);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:112:14: missed: statement clobbers memory: c_43 = malloc (_7);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:123:5: missed: statement clobbers memory: transform (a_156, b_159, c_163, n.0_153);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:126:9: missed: statement clobbers memory: _15 = clock_gettime (1, &start);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:133:9: missed: statement clobbers memory: transform (a_156, b_159, c_163, n.6_16);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:134:9: missed: statement clobbers memory: __asm__ __volatile__("" :  :  : "memory");
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:136:9: missed: statement clobbers memory: _18 = clock_gettime (1, &end);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "mode=independent n=%zu repeats=%zu checksum=%ld reference=%ld verified=%d elapsed_ns=%lu ns_per_element=%.6f\n", n.8_19, repeats.7_134, sum_125, sum_130, verified_51, _104, ns_per_element_52);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:153:5: missed: statement clobbers memory: free (a_156);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:154:5: missed: statement clobbers memory: free (b_159);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:155:5: missed: statement clobbers memory: free (c_163);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:137:9: missed: statement clobbers memory: free (a_156);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:138:9: missed: statement clobbers memory: free (b_159);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:139:9: missed: statement clobbers memory: free (c_163);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:127:9: missed: statement clobbers memory: free (a_156);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:128:9: missed: statement clobbers memory: free (b_159);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:129:9: missed: statement clobbers memory: free (c_163);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:114:9: missed: statement clobbers memory: free (a_154);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:115:9: missed: statement clobbers memory: free (b_157);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:116:9: missed: statement clobbers memory: free (c_161);
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: ***** Analysis failed with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:63:26: optimized: loop vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:63:26: optimized:  loop versioned for vectorization because of possible aliasing
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:56:22: note: vectorized 1 loops in function.
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:66:1: note: ***** Analysis failed with vector mode V4SI
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:66:1: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:37:14: missed: statement clobbers memory: parsed_15 = strtoull (text_13(D), &end, 10);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:32:12: note: ***** Analysis failed with vector mode V2DI
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:32:12: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:78:26: optimized: loop vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:132:36: missed: couldn't vectorize loop
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:132:36: missed: not vectorized: number of iterations cannot be computed.
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:70:26: optimized: loop vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:46:26: missed: couldn't vectorize loop
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:94:5: missed: not vectorized: relevant phi not supported: i_127 = PHI <0(10), i_94(34)>
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: vectorized 2 loops in function.
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:110:14: missed: statement clobbers memory: a_114 = malloc (4000000);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:111:14: missed: statement clobbers memory: b_135 = malloc (4000000);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:112:14: missed: statement clobbers memory: c_120 = malloc (4000000);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:100:22: missed: statement clobbers memory: _2 = parse_positive (_1, 20000000, &n);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:103:22: missed: statement clobbers memory: _5 = parse_positive (_4, 10000, &repeats);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:110:14: missed: statement clobbers memory: a_39 = malloc (_7);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:111:14: missed: statement clobbers memory: b_41 = malloc (_7);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:112:14: missed: statement clobbers memory: c_43 = malloc (_7);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:123:5: missed: statement clobbers memory: transform (a_156, b_159, c_163, n.0_153);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:126:9: missed: statement clobbers memory: _15 = clock_gettime (1, &start);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:133:9: missed: statement clobbers memory: transform (a_156, b_159, c_163, n.6_16);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:134:9: missed: statement clobbers memory: __asm__ __volatile__("" :  :  : "memory");
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:136:9: missed: statement clobbers memory: _18 = clock_gettime (1, &end);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "mode=independent n=%zu repeats=%zu checksum=%ld reference=%ld verified=%d elapsed_ns=%lu ns_per_element=%.6f\n", n.8_19, repeats.7_134, sum_125, sum_130, verified_51, _104, ns_per_element_52);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:153:5: missed: statement clobbers memory: free (a_156);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:154:5: missed: statement clobbers memory: free (b_159);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:155:5: missed: statement clobbers memory: free (c_163);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:137:9: missed: statement clobbers memory: free (a_156);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:138:9: missed: statement clobbers memory: free (b_159);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:139:9: missed: statement clobbers memory: free (c_163);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:127:9: missed: statement clobbers memory: free (a_156);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:128:9: missed: statement clobbers memory: free (b_159);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:129:9: missed: statement clobbers memory: free (c_163);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:114:9: missed: statement clobbers memory: free (a_154);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:115:9: missed: statement clobbers memory: free (b_157);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:116:9: missed: statement clobbers memory: free (c_161);
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: ***** Analysis failed with vector mode V2DI
+/home/roy/compiler-lab/prework/program_c_kernel_probe/src/kernel_probe.c:94:5: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V2DI

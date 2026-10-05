@@ -1,0 +1,73 @@
+// Standard SysY2022 example covering float and multidimensional arrays.
+// In SysY, an array parameter omits its first dimension. There is no tensor
+// keyword in the SysY source language.
+
+const float SCALE = 1.5;
+
+float samples[4] = {1.25, -2.0, 3.5, 4.0};
+float matrix_a[2][3] = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}};
+float matrix_b[2][3] = {{0.5, -1.0, 2.0}, {1.5, 0.25, -0.5}};
+
+float abs_float(float value) {
+    if (value < 0.0) {
+        return -value;
+    }
+    return value;
+}
+
+float language_rules_demo(int count, float value) {
+    float promoted = count;
+    int truncated = value;
+    float logical = !value;
+    return promoted + truncated + logical + 0x1p-1;
+}
+
+int minimum_int_demo() {
+    return -2147483648;
+}
+
+float scaled_array_sum(float data[], int len, float initial) {
+    int i = 0;
+    float total = initial;
+
+    while (i < len) {
+        total = total + data[i] * SCALE;
+        i = i + 1;
+    }
+    return total;
+}
+
+float matrix_dot(float left[][3], float right[][3]) {
+    int row = 0;
+    float total = 0.0;
+
+    while (row < 2) {
+        int col = 0;
+        while (col < 3) {
+            total = total + left[row][col] * right[row][col];
+            col = col + 1;
+        }
+        row = row + 1;
+    }
+    return total;
+}
+
+int main() {
+    float input = getfloat();
+    language_rules_demo(2, input);
+    minimum_int_demo();
+    float magnitude = abs_float(input);
+    float array_result = scaled_array_sum(samples, 4, input);
+    float dot_result = matrix_dot(matrix_a, matrix_b);
+    float combined = magnitude + array_result + dot_result;
+
+    putfloat(magnitude);
+    putch(32);
+    putfloat(array_result);
+    putch(32);
+    putfloat(dot_result);
+    putch(32);
+    putfloat(combined);
+    putch(10);
+    return 0;
+}

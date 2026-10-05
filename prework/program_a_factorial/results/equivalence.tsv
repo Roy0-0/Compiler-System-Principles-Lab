@@ -1,0 +1,9 @@
+input	expected	sysy_official_runtime	manual_llvm_official_runtime	manual_riscv_official_runtime_bridge	status
+-1	-1	-1	-1	-1	PASS
+0	1	1	1	1	PASS
+1	1	1	1	1	PASS
+2	2	2	2	2	PASS
+5	120	120	120	120	PASS
+10	3628800	3628800	3628800	3628800	PASS
+12	479001600	479001600	479001600	479001600	PASS
+13	-1	-1	-1	-1	PASS

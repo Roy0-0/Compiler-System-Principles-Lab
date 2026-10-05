@@ -1,0 +1,8 @@
+   text	   data	    bss	    dec	    hex	filename
+   2300	    608	      8	   2916	    b64	/home/roy/compiler-lab/prework/program_b_optimization/artifacts/array_O0
+   2300	    608	      8	   2916	    b64	/home/roy/compiler-lab/prework/program_b_optimization/artifacts/array_O0_g
+   1928	    608	      8	   2544	    9f0	/home/roy/compiler-lab/prework/program_b_optimization/artifacts/array_O1
+   2805	    608	      8	   3421	    d5d	/home/roy/compiler-lab/prework/program_b_optimization/artifacts/array_O2
+   2805	    608	      8	   3421	    d5d	/home/roy/compiler-lab/prework/program_b_optimization/artifacts/array_O3
+   2648	    608	      8	   3264	    cc0	/home/roy/compiler-lab/prework/program_b_optimization/artifacts/array_native
+   2941	    608	      8	   3557	    de5	/home/roy/compiler-lab/prework/program_b_optimization/artifacts/array_pgo_use

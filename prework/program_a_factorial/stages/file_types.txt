@@ -1,0 +1,19 @@
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial.ast.txt:              ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial.i:                    C source, ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial.o:                    ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), not stripped
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_O0.ll:                ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_O2.ll:                ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_after_instcombine.ll: ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_after_mem2reg.ll:     ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_after_opt_O2.ll:      ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_after_simplifycfg.ll: ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_link.map:             assembler source, ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_objdump.txt:          ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_object.txt:           ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_raw.ll:               ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_sysy.o:               ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), with debug_info, not stripped
+/home/roy/compiler-lab/prework/program_a_factorial/stages/factorial_x86_O0.s:             assembler source, ASCII text
+/home/roy/compiler-lab/prework/program_a_factorial/stages/file_types.txt:                 empty
+/home/roy/compiler-lab/prework/program_a_factorial/results/factorial_c:                   ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=913ec91c89b3da115c957c7ada6910d763da4c51, for GNU/Linux 3.2.0, not stripped
+/home/roy/compiler-lab/prework/program_a_factorial/results/factorial_manual_ir:           ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=f22ce2fcbadeb8f805586716e55923e004c3a3df, for GNU/Linux 3.2.0, not stripped
+/home/roy/compiler-lab/prework/program_a_factorial/results/factorial_manual_rv64.o:       ELF 64-bit LSB relocatable, UCB RISC-V, RVC, double-float ABI, version 1 (SYSV), not stripped

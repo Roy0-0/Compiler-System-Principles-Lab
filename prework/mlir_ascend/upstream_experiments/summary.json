@@ -1,0 +1,11 @@
+{
+  "cases": 10,
+  "pipelines": 5,
+  "rounds": 3,
+  "executions": 150,
+  "failures": 0,
+  "mlir_opt": "/home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-opt-14",
+  "mlir_translate": "/home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-translate-14",
+  "target": "x86_64 CPU",
+  "ascend_vendor_execution": false
+}

@@ -1,0 +1,10 @@
+variant,compiler,flags,threads,n,repeats,checksum,verified,median_ns_per_element,binary_bytes
+scalar_no_vector,clang,"-O3 -fno-vectorize -fno-slp-vectorize",1,5000000,20,546687110,1,0.474286,16344
+auto_vector,clang,"-O3",1,5000000,20,546687110,1,0.428837,16344
+restrict,clang,"-O3 -DUSE_RESTRICT",1,5000000,20,546687110,1,0.402262,16344
+gcc_O3,gcc,"-O3",1,5000000,20,546687110,1,0.396880,16328
+gcc_LTO,gcc,"-O3 -flto",1,5000000,20,546687110,1,0.406891,16312
+omp_1,gcc,"-O3 -fopenmp",1,5000000,20,546687110,1,0.436563,16760
+omp_2,gcc,"-O3 -fopenmp",2,5000000,20,546687110,1,0.237620,16760
+omp_4,gcc,"-O3 -fopenmp",4,5000000,20,546687110,1,0.165114,16760
+omp_8,gcc,"-O3 -fopenmp",8,5000000,20,546687110,1,0.111521,16760

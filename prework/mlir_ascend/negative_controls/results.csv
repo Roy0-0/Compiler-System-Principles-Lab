@@ -1,0 +1,3 @@
+control,expected_exit,actual_exit,status
+wrong_expected_checksum,1,1,DETECTED
+corrupt_vector_add,1,1,DETECTED

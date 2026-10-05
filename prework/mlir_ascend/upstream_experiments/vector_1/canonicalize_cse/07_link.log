@@ -1,0 +1,3 @@
+$ clang -O2 /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/vector_1/canonicalize_cse/05_program.ll -o /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/vector_1/canonicalize_cse/program
+warning: overriding the module target triple with x86_64-pc-linux-gnu [-Woverride-module]
+1 warning generated.

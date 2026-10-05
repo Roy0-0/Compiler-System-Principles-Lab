@@ -1,0 +1,404 @@
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Symbolic number of iterations is (unsigned int) n_8
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: detected reduction: sum_35 = _33 + sum_85;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: parallelizing inner loop 2
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Symbolic number of iterations is (unsigned int) n_8
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: parallelizing inner loop 3
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:37:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorized 3 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:37:23: optimized: loop with 2 iterations completely unrolled (header execution count 70307790)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop with 2 iterations completely unrolled (header execution count 14061558)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop with 2 iterations completely unrolled (header execution count 14061558)
+/usr/include/stdlib.h:364:16: missed: statement clobbers memory: _20 = strtol (_2, 0B, 10);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:44:14: missed: statement clobbers memory: a_15 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:45:14: missed: statement clobbers memory: b_17 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:46:14: missed: statement clobbers memory: c_19 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._loopfn.1, &.paral_data_store.20, 4, 0);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._loopfn.0, &.paral_data_store.14, 4, 0);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "%lld\n", sum_99);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:5: missed: statement clobbers memory: free (a_15);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:14: missed: statement clobbers memory: free (b_17);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:23: missed: statement clobbers memory: free (c_19);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:48: missed: statement clobbers memory: free (a_15);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:57: missed: statement clobbers memory: free (b_17);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:66: missed: statement clobbers memory: free (c_19);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ***** Analysis succeeded with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: SLPing BB part
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Costing subgraph: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x471e748 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.20.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x471e7c0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x471e7c0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ b_17, a_15 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Basic block will be vectorized using SLP
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Vectorizing SLP tree:
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x471e748 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.20.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x471e7c0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x471e7c0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ b_17, a_15 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ------>vectorizing SLP node starting from: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vect_is_simple_use: operand malloc (_4), type of def: internal
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: transform store. ncopies = 1
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .paral_data_store.20.b
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: created &.paral_data_store.20.b
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: add new stmt: MEM <vector(2) long unsigned int> [(int * *)&.paral_data_store.20 + 8B] = _275;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorizing stmts using SLP.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: optimized: basic block part vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Costing subgraph: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x471e838 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.14.c = c_19;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x471e8b0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x471e8b0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ a_15, c_19 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Vectorizing SLP tree:
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x471e838 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.14.c = c_19;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x471e8b0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x471e8b0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ a_15, c_19 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ------>vectorizing SLP node starting from: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vect_is_simple_use: operand malloc (_4), type of def: internal
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: transform store. ncopies = 1
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .paral_data_store.14.a
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: created &.paral_data_store.14.a
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: add new stmt: MEM <vector(2) long unsigned int> [(int * *)&.paral_data_store.14] = _279;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorizing stmts using SLP.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: optimized: basic block part vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ***** The result for vector mode V16QI would be the same
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:36: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:36: optimized:  loop versioned for vectorization because of possible aliasing
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: vectorized 1 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop with 2 iterations completely unrolled (header execution count 56693569)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Analysis failed with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** The result for vector mode V16QI would be the same
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Re-trying analysis with vector mode V8QI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Analysis failed with vector mode V8QI
+consider run-time aliasing test between *_26 and *_32
+consider run-time aliasing test between *_29 and *_32
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:54: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:54: optimized:  loop versioned for vectorization because of possible aliasing
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: vectorized 1 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop with 2 iterations completely unrolled (header execution count 70866961)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: ***** Analysis failed with vector mode V4SI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Symbolic number of iterations is (unsigned int) n_8
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: detected reduction: sum_35 = _33 + sum_85;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: parallelizing inner loop 2
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Symbolic number of iterations is (unsigned int) n_8
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: parallelizing inner loop 3
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:37:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorized 3 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:37:23: optimized: loop with 2 iterations completely unrolled (header execution count 70307790)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop with 2 iterations completely unrolled (header execution count 14061558)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop with 2 iterations completely unrolled (header execution count 14061558)
+/usr/include/stdlib.h:364:16: missed: statement clobbers memory: _20 = strtol (_2, 0B, 10);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:44:14: missed: statement clobbers memory: a_15 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:45:14: missed: statement clobbers memory: b_17 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:46:14: missed: statement clobbers memory: c_19 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._loopfn.1, &.paral_data_store.20, 4, 0);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._loopfn.0, &.paral_data_store.14, 4, 0);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "%lld\n", sum_99);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:5: missed: statement clobbers memory: free (a_15);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:14: missed: statement clobbers memory: free (b_17);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:23: missed: statement clobbers memory: free (c_19);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:48: missed: statement clobbers memory: free (a_15);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:57: missed: statement clobbers memory: free (b_17);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:66: missed: statement clobbers memory: free (c_19);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ***** Analysis succeeded with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: SLPing BB part
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Costing subgraph: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x1741d788 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.20.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x1741d800
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x1741d800 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ b_17, a_15 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Basic block will be vectorized using SLP
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Vectorizing SLP tree:
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x1741d788 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.20.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x1741d800
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x1741d800 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ b_17, a_15 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ------>vectorizing SLP node starting from: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vect_is_simple_use: operand malloc (_4), type of def: internal
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: transform store. ncopies = 1
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .paral_data_store.20.b
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: created &.paral_data_store.20.b
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: add new stmt: MEM <vector(2) long unsigned int> [(int * *)&.paral_data_store.20 + 8B] = _275;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorizing stmts using SLP.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: optimized: basic block part vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Costing subgraph: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x1741d878 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.14.c = c_19;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x1741d8f0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x1741d8f0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ a_15, c_19 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Vectorizing SLP tree:
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x1741d878 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.14.c = c_19;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x1741d8f0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x1741d8f0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ a_15, c_19 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ------>vectorizing SLP node starting from: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vect_is_simple_use: operand malloc (_4), type of def: internal
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: transform store. ncopies = 1
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .paral_data_store.14.a
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: created &.paral_data_store.14.a
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: add new stmt: MEM <vector(2) long unsigned int> [(int * *)&.paral_data_store.14] = _279;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorizing stmts using SLP.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: optimized: basic block part vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ***** The result for vector mode V16QI would be the same
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:36: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:36: optimized:  loop versioned for vectorization because of possible aliasing
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: vectorized 1 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop with 2 iterations completely unrolled (header execution count 56693569)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Analysis failed with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** The result for vector mode V16QI would be the same
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Re-trying analysis with vector mode V8QI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Analysis failed with vector mode V8QI
+consider run-time aliasing test between *_26 and *_32
+consider run-time aliasing test between *_29 and *_32
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:54: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:54: optimized:  loop versioned for vectorization because of possible aliasing
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: vectorized 1 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop with 2 iterations completely unrolled (header execution count 70866961)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: ***** Analysis failed with vector mode V4SI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Symbolic number of iterations is (unsigned int) n_8
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: detected reduction: sum_35 = _33 + sum_85;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: parallelizing inner loop 2
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Symbolic number of iterations is (unsigned int) n_8
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: parallelizing inner loop 3
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:37:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorized 3 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:37:23: optimized: loop with 2 iterations completely unrolled (header execution count 70307790)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop with 2 iterations completely unrolled (header execution count 14061558)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop with 2 iterations completely unrolled (header execution count 14061558)
+/usr/include/stdlib.h:364:16: missed: statement clobbers memory: _20 = strtol (_2, 0B, 10);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:44:14: missed: statement clobbers memory: a_15 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:45:14: missed: statement clobbers memory: b_17 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:46:14: missed: statement clobbers memory: c_19 = malloc (_4);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._loopfn.1, &.paral_data_store.20, 4, 0);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._loopfn.0, &.paral_data_store.14, 4, 0);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "%lld\n", sum_99);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:5: missed: statement clobbers memory: free (a_15);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:14: missed: statement clobbers memory: free (b_17);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:51:23: missed: statement clobbers memory: free (c_19);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:48: missed: statement clobbers memory: free (a_15);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:57: missed: statement clobbers memory: free (b_17);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:47:66: missed: statement clobbers memory: free (c_19);
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ***** Analysis succeeded with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: SLPing BB part
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Costing subgraph: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x2537748 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.20.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x25377c0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x25377c0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ b_17, a_15 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Basic block will be vectorized using SLP
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Vectorizing SLP tree:
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x2537748 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.20.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x25377c0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x25377c0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ b_17, a_15 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ------>vectorizing SLP node starting from: .paral_data_store.20.b = b_17;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vect_is_simple_use: operand malloc (_4), type of def: internal
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: transform store. ncopies = 1
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .paral_data_store.20.b
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: created &.paral_data_store.20.b
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: add new stmt: MEM <vector(2) long unsigned int> [(int * *)&.paral_data_store.20 + 8B] = _275;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorizing stmts using SLP.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: optimized: basic block part vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Costing subgraph: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x2537838 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.14.c = c_19;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x25378b0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x25378b0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ a_15, c_19 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis: 
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: Vectorizing SLP tree:
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x2537838 (max_nunits=2, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.14.c = c_19;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x25378b0
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x25378b0 (max_nunits=1, refcnt=1)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ a_15, c_19 }
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ------>vectorizing SLP node starting from: .paral_data_store.14.a = a_15;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vect_is_simple_use: operand malloc (_4), type of def: internal
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: transform store. ncopies = 1
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .paral_data_store.14.a
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: created &.paral_data_store.14.a
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: add new stmt: MEM <vector(2) long unsigned int> [(int * *)&.paral_data_store.14] = _279;
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: vectorizing stmts using SLP.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: optimized: basic block part vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:40:5: note: ***** The result for vector mode V16QI would be the same
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:36: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:36: optimized:  loop versioned for vectorization because of possible aliasing
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: vectorized 1 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop with 2 iterations completely unrolled (header execution count 56693569)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Analysis failed with vector mode V2DI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** The result for vector mode V16QI would be the same
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Re-trying analysis with vector mode V8QI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Analysis failed with vector mode V8QI
+consider run-time aliasing test between *_26 and *_32
+consider run-time aliasing test between *_29 and *_32
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:54: optimized: loop vectorized using 16 byte vectors
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:54: optimized:  loop versioned for vectorization because of possible aliasing
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: vectorized 1 loops in function.
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop with 2 iterations completely unrolled (header execution count 70866961)
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: ***** Analysis failed with vector mode V4SI
+/mnt/e/编译/compiler_prework/program_b_optimization/src/array_transform.c:32:23: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Symbolic number of iterations is (unsigned int) n_8
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: detected reduction: sum_35 = _33 + sum_85;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:23: optimized: parallelizing inner loop 2
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Symbolic number of iterations is (unsigned int) n_8
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: optimized: parallelizing inner loop 3
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:37:23: optimized: loop vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: vectorized 3 loops in function.
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:37:23: optimized: loop with 2 iterations completely unrolled (header execution count 70307790)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop with 2 iterations completely unrolled (header execution count 14061558)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop with 2 iterations completely unrolled (header execution count 14061558)
+/usr/include/stdlib.h:364:16: missed: statement clobbers memory: _20 = strtol (_2, 0B, 10);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:44:14: missed: statement clobbers memory: a_15 = malloc (_4);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:45:14: missed: statement clobbers memory: b_17 = malloc (_4);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:46:14: missed: statement clobbers memory: c_19 = malloc (_4);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._loopfn.1, &.paral_data_store.20, 4, 0);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: missed: statement clobbers memory: __builtin_GOMP_parallel (main._loopfn.0, &.paral_data_store.14, 4, 0);
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:112:10: missed: statement clobbers memory: __printf_chk (1, "%lld\n", sum_99);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:51:5: missed: statement clobbers memory: free (a_15);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:51:14: missed: statement clobbers memory: free (b_17);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:51:23: missed: statement clobbers memory: free (c_19);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:47:48: missed: statement clobbers memory: free (a_15);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:47:57: missed: statement clobbers memory: free (b_17);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:47:66: missed: statement clobbers memory: free (c_19);
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: ***** Analysis succeeded with vector mode V2DI
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: SLPing BB part
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Costing subgraph: 
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x3534d708 (max_nunits=2, refcnt=1)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.20.b = b_17;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.20.b = b_17;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.20.a = a_15;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x3534d780
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x3534d780 (max_nunits=1, refcnt=1)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ b_17, a_15 }
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis: 
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Basic block will be vectorized using SLP
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Vectorizing SLP tree:
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x3534d708 (max_nunits=2, refcnt=1)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.20.b = b_17;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.20.b = b_17;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.20.a = a_15;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x3534d780
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x3534d780 (max_nunits=1, refcnt=1)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ b_17, a_15 }
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: ------>vectorizing SLP node starting from: .paral_data_store.20.b = b_17;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: vect_is_simple_use: operand malloc (_4), type of def: internal
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: transform store. ncopies = 1
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .paral_data_store.20.b
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: created &.paral_data_store.20.b
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: add new stmt: MEM <vector(2) long unsigned int> [(int * *)&.paral_data_store.20 + 8B] = _275;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: vectorizing stmts using SLP.
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: optimized: basic block part vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Costing subgraph: 
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x3534d7f8 (max_nunits=2, refcnt=1)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.14.a = a_15;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.14.a = a_15;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.14.c = c_19;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x3534d870
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x3534d870 (max_nunits=1, refcnt=1)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ a_15, c_19 }
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis: 
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Cost model analysis for part in loop 0:
+  Vector cost: 20
+  Scalar cost: 24
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: Vectorizing SLP tree:
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: node 0x3534d7f8 (max_nunits=2, refcnt=1)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: op template: .paral_data_store.14.a = a_15;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 0 .paral_data_store.14.a = a_15;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	stmt 1 .paral_data_store.14.c = c_19;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	children 0x3534d870
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: node (external) 0x3534d870 (max_nunits=1, refcnt=1)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: 	{ a_15, c_19 }
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: ------>vectorizing SLP node starting from: .paral_data_store.14.a = a_15;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: vect_is_simple_use: operand malloc (_4), type of def: internal
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: transform store. ncopies = 1
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: create vector_type-pointer variable to type: vector(2) long unsigned int  vectorizing a pointer ref: .paral_data_store.14.a
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: created &.paral_data_store.14.a
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: add new stmt: MEM <vector(2) long unsigned int> [(int * *)&.paral_data_store.14] = _279;
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: vectorizing stmts using SLP.
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: optimized: basic block part vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:40:5: note: ***** The result for vector mode V16QI would be the same
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:36: optimized: loop vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:36: optimized:  loop versioned for vectorization because of possible aliasing
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: note: vectorized 1 loops in function.
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: optimized: loop with 2 iterations completely unrolled (header execution count 56693569)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Analysis failed with vector mode V2DI
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: note: ***** The result for vector mode V16QI would be the same
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Re-trying analysis with vector mode V8QI
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:25:23: note: ***** Analysis failed with vector mode V8QI
+consider run-time aliasing test between *_26 and *_32
+consider run-time aliasing test between *_29 and *_32
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:54: optimized: loop vectorized using 16 byte vectors
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:54: optimized:  loop versioned for vectorization because of possible aliasing
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:23: note: vectorized 1 loops in function.
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:23: optimized: loop with 2 iterations completely unrolled (header execution count 70866961)
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:23: note: ***** Analysis failed with vector mode V4SI
+/home/roy/compiler-lab/prework/program_b_optimization/src/array_transform.c:32:23: note: ***** Skipping vector mode V16QI, which would repeat the analysis for V4SI

@@ -1,0 +1,1 @@
+$ opt -verify /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/vector_257/canonicalize/05_program.ll -disable-output

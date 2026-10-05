@@ -1,0 +1,9 @@
+program_b_optimization/src/array_transform.c:25:5: remark: vectorized loop (vectorization width: 4, interleaved count: 2) [-Rpass=loop-vectorize]
+    for (int i = 0; i < n; ++i) { a[i] = i % 97; b[i] = i % 31; }
+    ^
+program_b_optimization/src/array_transform.c:32:5: remark: vectorized loop (vectorization width: 4, interleaved count: 2) [-Rpass=loop-vectorize]
+    for (int i = 0; i < n; ++i) c[i] = adjust_value(a[i] * SCALE + b[i]);
+    ^
+program_b_optimization/src/array_transform.c:37:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2) [-Rpass=loop-vectorize]
+    for (int i = 0; i < n; ++i) sum += c[i];
+    ^

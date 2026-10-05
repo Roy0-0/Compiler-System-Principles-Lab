@@ -1,0 +1,1 @@
+$ /home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-translate-14 /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/scalar_257/baseline/04_llvm.mlir --mlir-to-llvmir -o /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/scalar_257/baseline/05_program.ll

@@ -1,0 +1,24 @@
+# Project-local tool downloads (recreated by install_mlir_local.sh)
+/tools/
+
+# Root build products
+/build/
+/*.bc
+/*.o
+/sysy_demo
+/ir_demo
+/advanced_sysy_demo
+/advanced_ir_demo
+
+# Editor, OS and Python caches
+.DS_Store
+Thumbs.db
+*.swp
+*~
+__pycache__/
+*.py[cod]
+
+# Generated profiling state
+*.profraw
+*.profdata
+

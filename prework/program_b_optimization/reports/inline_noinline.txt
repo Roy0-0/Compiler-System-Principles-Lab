@@ -1,0 +1,18 @@
+program_b_optimization/src/array_transform.c:32:40: remark: 'adjust_value' not inlined into 'transform' because it should never be inlined (cost=never): noinline function attribute [-Rpass-missed=inline]
+    for (int i = 0; i < n; ++i) c[i] = adjust_value(a[i] * SCALE + b[i]);
+                                       ^
+program_b_optimization/src/array_transform.c:42:23: remark: 'atoi' inlined into 'main' with (cost=10, threshold=487) at callsite main:2:23; [-Rpass=inline]
+    if (argc > 1) n = atoi(argv[1]);
+                      ^
+program_b_optimization/src/array_transform.c:48:5: remark: 'initialize' inlined into 'main' with (cost=-15000, threshold=250) at callsite main:8:5; [-Rpass=inline]
+    initialize(a, b, n);
+    ^
+program_b_optimization/src/array_transform.c:49:5: remark: 'transform' inlined into 'main' with (cost=-14965, threshold=250) at callsite main:9:5; [-Rpass=inline]
+    transform(a, b, c, n);
+    ^
+program_b_optimization/src/array_transform.c:50:33: remark: 'checksum' inlined into 'main' with (cost=-15005, threshold=250) at callsite main:10:33; [-Rpass=inline]
+    printf("%lld\n", (long long)checksum(c, n));
+                                ^
+program_b_optimization/src/array_transform.c:32:40: remark: 'adjust_value' not inlined into 'main' because it should never be inlined (cost=never): noinline function attribute [-Rpass-missed=inline]
+    for (int i = 0; i < n; ++i) c[i] = adjust_value(a[i] * SCALE + b[i]);
+                                       ^

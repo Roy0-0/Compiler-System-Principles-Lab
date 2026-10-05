@@ -1,0 +1,141 @@
+// Comprehensive SysY example for the compiler preparation assignment.
+// It covers integer operations, assignments, branches, short-circuit logic,
+// loops, break/continue, functions, nested scopes, arrays, and runtime I/O.
+
+const int LIMIT = 6;
+
+int global_bias = 3;
+int weights[6] = {1, 2, 3, 4, 5, 6};
+int table[2][3] = {{1, 2, 3}, {4, 5, 6}};
+
+int abs_val(int x) {
+    if (x < 0) {
+        return -x;
+    } else {
+        return +x;
+    }
+}
+
+int classify(int x) {
+    if ((!(x < 0) && x <= LIMIT) || x == 100) {
+        return 1;
+    }
+    return 0;
+}
+
+int arithmetic_demo(int a, int b) {
+    int safe_b = b;
+    int value = 0;
+
+    if (safe_b == 0) {
+        safe_b = 1;
+    }
+
+    value = value + (a + safe_b);
+    value = value + (a - safe_b);
+    value = value + (a * safe_b);
+    value = value + (a / safe_b);
+    value = value + (a % safe_b);
+    value = value + (+a);
+    value = value + (-safe_b);
+    return value;
+}
+
+int sum_selected(int n) {
+    int i = 0;
+    int total = 0;
+
+    while (i < n) {
+        i = i + 1;
+
+        if (i % 2 == 0) {
+            continue;
+        }
+
+        total = total + i;
+        if (total > 7) {
+            break;
+        }
+    }
+    return total;
+}
+
+int array_sum(int data[], int len) {
+    int i = 0;
+    int total = 0;
+
+    while (i < len) {
+        total = total + data[i];
+        i = i + 1;
+    }
+    return total;
+}
+
+int matrix_sum(int data[][3], int rows) {
+    int row = 0;
+    int total = 0;
+
+    while (row < rows) {
+        int col = 0;
+        while (col < 3) {
+            total = total + data[row][col];
+            col = col + 1;
+        }
+        row = row + 1;
+    }
+    return total;
+}
+
+int emit(int value, int last) {
+    putint(value);
+    if (last) {
+        putch(10);
+    } else {
+        putch(32);
+    }
+    return 0;
+}
+
+int main() {
+    int raw = getint();
+    int n = raw;
+
+    if (n < 1) {
+        n = 5;
+    } else {
+        if (n > LIMIT) {
+            n = LIMIT;
+        }
+    }
+
+    int arithmetic = arithmetic_demo(n, global_bias);
+    int selected = sum_selected(n);
+    int weight_sum = array_sum(weights, n);
+    int table_sum = matrix_sum(table, 2);
+    int category = classify(raw);
+    int magnitude = abs_val(raw);
+
+    // A function call used as an expression statement.
+    classify(n);
+
+    global_bias = global_bias + 1;
+
+    int result = arithmetic + selected + weight_sum + table_sum;
+    result = result + category + magnitude;
+
+    // Nested scope with a local variable shadowing the global name.
+    {
+        int global_bias = 2;
+        result = result + global_bias;
+    }
+
+    emit(arithmetic, 0);
+    emit(selected, 0);
+    emit(weight_sum, 0);
+    emit(table_sum, 0);
+    emit(category, 0);
+    emit(magnitude, 0);
+    emit(global_bias, 0);
+    emit(result, 1);
+    return 0;
+}

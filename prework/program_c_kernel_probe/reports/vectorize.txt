@@ -1,0 +1,16 @@
+program_c_kernel_probe/src/kernel_probe.c:46:5: remark: the cost-model indicates that vectorization is not beneficial [-Rpass-missed=loop-vectorize]
+    for (size_t i = 0; i < n; ++i) {
+    ^
+program_c_kernel_probe/src/kernel_probe.c:46:5: remark: the cost-model indicates that interleaving is not beneficial [-Rpass-missed=loop-vectorize]
+program_c_kernel_probe/src/kernel_probe.c:70:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2) [-Rpass=loop-vectorize]
+    for (size_t i = 0; i < n; ++i) {
+    ^
+program_c_kernel_probe/src/kernel_probe.c:132:5: remark: loop not vectorized [-Rpass-missed=loop-vectorize]
+    for (size_t repeat = 0; repeat < repeats; ++repeat) {
+    ^
+program_c_kernel_probe/src/kernel_probe.c:78:5: remark: vectorized loop (vectorization width: 2, interleaved count: 2) [-Rpass=loop-vectorize]
+    for (size_t i = 0; i < n; ++i) {
+    ^
+program_c_kernel_probe/src/kernel_probe.c:63:5: remark: vectorized loop (vectorization width: 4, interleaved count: 2) [-Rpass=loop-vectorize]
+    for (size_t i = 0; i < n; ++i) {
+    ^

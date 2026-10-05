@@ -1,0 +1,44 @@
+module {
+  func @main() -> i32 {
+    %a = memref.alloc() : memref<64xi32>
+    %b = memref.alloc() : memref<64xi32>
+    %c = memref.alloc() : memref<64xi32>
+    %zero = arith.constant 0 : i32
+    %two = arith.constant 2 : i32
+    %expected = arith.constant 6048 : i32
+    %ok = arith.constant 0 : i32
+    %bad = arith.constant 1 : i32
+    affine.for %i = 0 to 64 {
+      %idx = arith.index_cast %i : index to i32
+      %twice = arith.muli %idx, %two : i32
+      affine.store %idx, %a[%i] : memref<64xi32>
+      affine.store %twice, %b[%i] : memref<64xi32>
+    }
+
+    affine.for %i = 0 to 64 step 4 {
+      %x = vector.load %a[%i] : memref<64xi32>, vector<4xi32>
+      %y = vector.load %b[%i] : memref<64xi32>, vector<4xi32>
+      %v = arith.addi %x, %y : vector<4xi32>
+      vector.store %v, %c[%i] : memref<64xi32>, vector<4xi32>
+    }
+
+    affine.for %i = 64 to 64 {
+      %x = affine.load %a[%i] : memref<64xi32>
+      %y = affine.load %b[%i] : memref<64xi32>
+      %v = arith.addi %x, %y : i32
+      affine.store %v, %c[%i] : memref<64xi32>
+    }
+
+    %sum = affine.for %i = 0 to 64 iter_args(%acc = %zero) -> i32 {
+      %value = affine.load %c[%i] : memref<64xi32>
+      %next = arith.addi %acc, %value : i32
+      affine.yield %next : i32
+    }
+    %equal = arith.cmpi eq, %sum, %expected : i32
+    %status = select %equal, %ok, %bad : i32
+    memref.dealloc %a : memref<64xi32>
+    memref.dealloc %b : memref<64xi32>
+    memref.dealloc %c : memref<64xi32>
+    return %status : i32
+  }
+}

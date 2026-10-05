@@ -1,0 +1,1 @@
+$ /home/roy/compiler-lab/tools/mlir14/usr/bin/mlir-opt-14 /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/scalar_16/cse/01_optimized.mlir --lower-affine --verify-each -o /home/roy/compiler-lab/prework/mlir_ascend/upstream_experiments/scalar_16/cse/02_scf.mlir
